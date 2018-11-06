@@ -5,7 +5,7 @@ env:
   # Use this to set your game's name. It is being used
   # throughout this file for naming exported artifacts.
   # This will, for example, create an "Awesome Game.exe"
-  - GAME_NAME="empty game"
+  - GAME_NAME="Awesome Game"
 
 install:
 - docker pull kiesenverseist/docker-godot-export:3-1-alpha2
