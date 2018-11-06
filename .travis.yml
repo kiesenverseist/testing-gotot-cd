@@ -27,8 +27,8 @@ script:
 # This creates zip files from the exported game builds for the
 # three desktop platforms
 before_deploy:
-- zip -j "${GAME_NAME}-linux.zip"   output/linux/*
-- zip -j "${GAME_NAME}-windows.zip" output/windows/*
+- zip -r "${GAME_NAME}-linux.zip"   output/linux
+- zip -r "${GAME_NAME}-windows.zip" output/windows
 # No need to zip the mac game, because it already is a zip
 - cp -R output/mac/* .
 
