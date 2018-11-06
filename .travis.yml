@@ -5,7 +5,7 @@ env:
   # Use this to set your game's name. It is being used
   # throughout this file for naming exported artifacts.
   # This will, for example, create an "Awesome Game.exe"
-  - GAME_NAME="Awesome Game"
+  - GAME_NAME="Awesome"
 
 install:
 - docker pull kiesenverseist/docker-godot-export:3-1-alpha2
@@ -27,7 +27,7 @@ script:
 # This creates zip files from the exported game builds for the
 # three desktop platforms
 before_deploy:
-#- zip -j "${GAME_NAME}-linux.zip"   output/linux/*
+- zip -j "${GAME_NAME}-linux.zip"   output/linux/*
 - zip -j "${GAME_NAME}-windows.zip" output/windows/*
 # No need to zip the mac game, because it already is a zip
 - cp -R output/mac/* .
@@ -40,7 +40,7 @@ deploy:
   skip-cleanup: true
   api_key: $GITHUB_TOKEN
   file:
-#    - "${GAME_NAME}-linux.zip"
+    - "${GAME_NAME}-linux.zip"
     - "${GAME_NAME}-windows.zip"
     - "${GAME_NAME}-mac.zip"
   on:
