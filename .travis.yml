@@ -5,7 +5,7 @@ env:
   # Use this to set your game's name. It is being used
   # throughout this file for naming exported artifacts.
   # This will, for example, create an "Awesome Game.exe"
-  - GAME_NAME="wel it did work last time"
+  - GAME_NAME="test"
 
 install:
 - docker pull kiesenverseist/docker-godot-export:3-1-alpha2
@@ -40,9 +40,9 @@ deploy:
   skip-cleanup: true
   api_key: $GITHUB_TOKEN
   file:
-    - "${GAME_NAME}-linux.zip"
-    - "${GAME_NAME}-windows.zip"
-    - "${GAME_NAME}-mac.zip"
+    - "${GAME_NAME}-$TRAVIS_TAG-linux.zip"
+    - "${GAME_NAME}-$TRAVIS_TAG-windows.zip"
+    - "${GAME_NAME}-$TRAVIS_TAG-mac.zip"
   on:
     # Create GitHub Releases for new git tags
     # regardless of the branch.
