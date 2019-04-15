@@ -8,16 +8,16 @@ env:
   - GAME_NAME="test"
 
 install:
-- docker pull kiesenverseist/docker-godot-export:3-1-alpha2
+- docker pull kiesenverseist/docker-godot-export:master
 
 # Each of the following lines exports the game for a given platform.
 # You can specify the platform in the EXPORT_NAME variable
 # The exported game wills be written to the folder specified after the second "-v" flag
 # "-v $(pwd)/output/html5:/build/output" writes the exported game to  the "output/html5" folder.
 script:
-- docker run -e EXPORT_NAME="Linux/X11"       -e OUTPUT_FILENAME="${GAME_NAME}-$TRAVIS_TAG"         -v $(pwd):/build/src -v $(pwd)/output/linux:/build/output   kiesenverseist/docker-godot-export:3-1-alpha2
-- docker run -e EXPORT_NAME="Windows Desktop" -e OUTPUT_FILENAME="${GAME_NAME}-$TRAVIS_TAG.exe"     -v $(pwd):/build/src -v $(pwd)/output/windows:/build/output kiesenverseist/docker-godot-export:3-1-alpha2
-- docker run -e EXPORT_NAME="Mac OSX"         -e OUTPUT_FILENAME="${GAME_NAME}-$TRAVIS_TAG-mac.zip" -v $(pwd):/build/src -v $(pwd)/output/mac:/build/output     kiesenverseist/docker-godot-export:3-1-alpha2
+- docker run -e EXPORT_NAME="Linux/X11"       -e OUTPUT_FILENAME="${GAME_NAME}-$TRAVIS_TAG"         -v $(pwd):/build/src -v $(pwd)/output/linux:/build/output   kiesenverseist/docker-godot-export:master
+- docker run -e EXPORT_NAME="Windows Desktop" -e OUTPUT_FILENAME="${GAME_NAME}-$TRAVIS_TAG.exe"     -v $(pwd):/build/src -v $(pwd)/output/windows:/build/output kiesenverseist/docker-godot-export:master
+- docker run -e EXPORT_NAME="Mac OSX"         -e OUTPUT_FILENAME="${GAME_NAME}-$TRAVIS_TAG-mac.zip" -v $(pwd):/build/src -v $(pwd)/output/mac:/build/output     kiesenverseist/docker-godot-export:master
 
 # Now comes deployment related code.
 # To make this work, you need to set a GITHUB_TOKEN environment variable through
