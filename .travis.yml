@@ -30,7 +30,7 @@ before_deploy:
 - zip -r -j "${GAME_NAME}-$TRAVIS_TAG-linux.zip"   output/linux
 - zip -r -j "${GAME_NAME}-$TRAVIS_TAG-windows.zip" output/windows
 # No need to zip the mac game, because it already is a zip
-- mv -R output/mac/* "output/mac/${GAME_NAME}-$TRAVIS_TAG-mac.zip"
+- mv output/mac/* "output/mac/${GAME_NAME}-$TRAVIS_TAG-mac.zip"
 
 deploy:
 # The following block is responsible to upload the zip files
