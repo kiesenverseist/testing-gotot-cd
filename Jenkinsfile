@@ -8,7 +8,8 @@ pipeline {
 fi'''
         sh '''mkdir builds
 mkdir builds/linux
-mkdir builds/windows'''
+mkdir builds/windows
+mkdir builds/mac'''
         sh 'ls'
       }
     }
