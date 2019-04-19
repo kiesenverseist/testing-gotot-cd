@@ -29,7 +29,7 @@ mkdir builds/windows'''
         stage('Mac') {
           steps {
             sh 'godot --export \'Mac OSX\' builds/mac/test.app'
-            sh 'mv builds/Test-$BUILD_NUMBER-Mac.zip builds/mac/*'
+            sh 'mv builds/mac/* builds/Test-$BUILD_NUMBER-Mac.zip '
           }
         }
       }
