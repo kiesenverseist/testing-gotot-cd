@@ -9,6 +9,7 @@ fi'''
         sh '''mkdir builds
 mkdir builds/linux
 mkdir builds/windows'''
+        sh 'ls'
       }
     }
     stage('Build') {
